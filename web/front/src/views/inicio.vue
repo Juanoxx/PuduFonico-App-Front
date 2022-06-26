@@ -10,6 +10,7 @@
         src="/playground_assets/34c5a135-bab0-4d95-ab28-662a7daee1b1-u54u-200h.png"
         alt="logoProyecto2543"
         class="inicio-logo-proyecto2"
+        v-on:click="inicio"
       />
       <img
         src="/playground_assets/f2b1cb06-9e57-4f4a-af10-9b9c94885482-flg4r-200h.png"
@@ -122,7 +123,7 @@
       <span class="inicio-text16">cvp-004</span>
       <span class="inicio-text17">cvp-002</span>
       <span class="inicio-text18">Consultas virtuales personalizadas (CVP)</span>
-      <span class="inicio-text19">cvp-001</span>
+      <span class="inicio-text19" v-on:click="cvp">cvp-001</span>
       <span class="inicio-text20">cvp-008</span>
       
       <span class="inicio-text21">
@@ -266,6 +267,14 @@ export default {
       raws67h: ' ',
       kids: {id:"cvp-011"},
     }
+  },
+  methods: {
+    inicio() {
+      this.$router.push("/")
+    },
+    cvp() {
+      this.$router.push("/perfilcvp/1")
+    },
   },
 }
 </script>

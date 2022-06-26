@@ -7,10 +7,10 @@
         class="login-logo-proyecto2"
       />
       <span class="login-text">Inicio de sesión</span>
-      <input v-model="suario" placeholder="Usuario"  class="login-rectangle25" />
+      <input v-model="usuario" placeholder="Usuario"  class="login-rectangle25" />
       <input v-model="contraseña" placeholder="Contraseña"  class="login-rectangle26" type="password"/>
       <button v-on:click="Ingreso" class="login-rectangle27"> <span class="login-text03">Ingresar</span>  </button>
-      <button v-on:click="counter += 1" class="login-rectangle28"> <span class="login-text08">Crear cuenta</span>  </button>
+      <button v-on:click="registro" class="login-rectangle28"> <span class="login-text08">Crear cuenta</span>  </button>
       <span class="login-text01">Usuario</span>
       <span class="login-text02">Contraseña</span>
       <span class="login-text04">
@@ -19,7 +19,7 @@
         <span></span>
       </span>
       
-      <span class="login-text09">¿Olvidaste tu contraseña?</span>
+      <span class="login-text09" v-on:click="recuperar">¿Olvidaste tu contraseña?</span>
       <div class="login-exporttocodeerrorsdeletemeanytime">
         <img
           src="/playground_assets/2027219e-e312-48c3-a5f5-b06410028f8d-iklg-1600w.png"
@@ -37,7 +37,7 @@ export default {
   data() {
     return {
       contraseña: '',
-      cuenta: '',
+      usuario: '',
       counter:1
     }
   },
@@ -45,6 +45,12 @@ export default {
     Ingreso() {
       this.$router.push("/inicio")
     },
+    registro() {
+      this.$router.push("/creaciondecuenta")
+    },
+    recuperar(){
+      this.$router.push("/recuperarpass")
+    }
   },
 }
 </script>

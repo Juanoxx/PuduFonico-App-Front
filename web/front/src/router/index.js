@@ -2,6 +2,10 @@ import { createRouter, createWebHistory } from 'vue-router'
 import HomeView from '../views/HomeView.vue'
 import Login from '../views/login.vue'
 import Inicio from '../views/inicio.vue'
+import CreacionDeCuenta from '../views/creaciondecuenta.vue'
+import RecuperarPass from '../views/recuperarcontrasea.vue'
+import Perfil from '../views/perfil-c-v-p.vue'
+
 const routes = [
   {
     path: '/',
@@ -12,6 +16,21 @@ const routes = [
     path: '/inicio',
     name: 'inicio',
     component: Inicio
+  },
+  {
+    path: '/creaciondecuenta',
+    name: 'creaciondecuenta',
+    component: CreacionDeCuenta
+  },
+  {
+    path: '/recuperarpass',
+    name: 'recuperarcontraseña',
+    component: RecuperarPass
+  },
+  {
+    path: '/perfilcvp/1',
+    name: 'perfil',
+    component: Perfil
   },
   {
     path: '/about',
