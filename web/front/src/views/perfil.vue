@@ -2,22 +2,23 @@
   <div class="perfil-container">
     <div class="perfil-perfil">
       <img
-        src="/playground_assets/71aa9d64-95f3-4c46-b94a-c370bcb4bbb2-ro8k.svg"
+        src="/playground_assets/5ba569b8-f611-4ec8-8594-d7096369a9eb-i9x.svg"
         alt="Rectangle286171"
         class="perfil-rectangle28"
       />
       <img
-        src="/playground_assets/af3a30d9-bc52-4562-be5d-6b94d7426ac5-lhvm-200h.png"
+        src="/playground_assets/537a0a12-5a09-4afd-bb26-9b2352c387e9-v7xw-200h.png"
         alt="logoProyecto26172"
         class="perfil-logo-proyecto2"
+        v-on:click="inicio"
       />
       <img
-        src="/playground_assets/4ff493a4-b9e9-4c00-81c8-357fb3c7edcd-o5cj-200h.png"
+        src="/playground_assets/f3060cc1-2c42-4b86-8259-6f7cd6ba0b98-luag-200h.png"
         alt="pudufoni16173"
         class="perfil-pudufoni1"
       />
       <img
-        src="/playground_assets/b26089f9-d55a-4b39-a1fe-d18c50b65e65-6ze-200h.png"
+        src="/playground_assets/4997a09d-773a-4815-b6b8-58bc7128e05d-a32x-200h.png"
         alt="imagen20220421172719085previewrev116174"
         class="perfil-imagen20220421172719085previewrev11"
       />
@@ -25,62 +26,61 @@
       <span class="perfil-text01">Crear Sala</span>
       <span class="perfil-text02">Contacto</span>
       <img
-        src="/playground_assets/2fbeb732-d50b-47e8-92e0-d988a737c60d-1ch-200w.png"
+        src="/playground_assets/eeef37a5-d283-4faf-b068-beb63c86322c-ejv-200w.png"
         alt="imagen20220421185711919previewrev2161112"
         class="perfil-imagen20220421185711919previewrev21"
       />
       <img
-        src="/playground_assets/83fff69c-3a8e-4487-83d4-5964965ec160-n3lf-200h.png"
+        src="/playground_assets/54330a62-4e6b-4080-a47c-6fab6910708b-3fdl-200h.png"
         alt="imagen20220421190215610previewrev1161113"
         class="perfil-imagen20220421190215610previewrev11"
       />
       <img
-        src="/playground_assets/8337e1d0-d94b-4f96-9ef0-fb46d006f8d0-ikw8-300h.png"
+        src="/playground_assets/2b52efd9-85e8-4f26-ace7-add35ac1da15-8c1p-300h.png"
         alt="imagen20220421193036317161114"
         class="perfil-imagen202204211930363171"
       />
       <img
-        src="/playground_assets/dd618dc6-5f62-421a-882a-a535fb106e11-duc.svg"
+        src="/playground_assets/ddee4a58-9dc7-43a2-afba-50a7d61011d3-cwve.svg"
         alt="Rectangle2561115"
         class="perfil-rectangle25"
       />
-      <span class="perfil-text03">Fernando Haisenberg</span>
+      <span class="perfil-text03">{{usuario.fname}}</span>
       <img
-        src="/playground_assets/6c969f94-110d-4e8f-a838-c940e890000e-wf3.svg"
+        src="/playground_assets/dd6299bd-a04e-4680-adfa-62634783e05b-i5so.svg"
+        alt="Rectangle2961116"
+        class="perfil-rectanglenuevo"
+      />
+      <img
+        src="/playground_assets/dd6299bd-a04e-4680-adfa-62634783e05b-i5so.svg"
         alt="Rectangle2961116"
         class="perfil-rectangle29"
       />
-      <span class="perfil-text04">fernand.h20@gmail.com</span>
+      {{usuario}}
+      <span class="perfil-text04">{{usuario.lnames}}</span>
+      <span class="perfil-textnuevo">{{usuario.email}}</span>
       <span class="perfil-text05">Estadísticas generales</span>
+      <button v-on:click="editar" class="perfil-rectangle281"> <span class="perfil-text06">Editar Perfil</span>  </button>
+      
       <img
-        src="/playground_assets/8233b99a-a741-414a-9d3a-684bc2d7f9b7-ewi.svg"
-        alt="Rectangle2861121"
-        class="perfil-rectangle281"
-      />
-      <span class="perfil-text06">Editar Perfil</span>
-      <img
-        src="/playground_assets/81a853e0-0cb5-4bce-8926-582e27f4636c-4iv-500w.png"
+        src="/playground_assets/cb75f7b6-7f24-4a05-a1be-a4beadec4d2e-4h8k-500w.png"
         alt="image1263128"
         class="perfil-image12"
       />
       <img
-        src="/playground_assets/5a5bd89a-5bbb-43be-8b7e-efe53bb25a79-v5-200h.png"
+        src="/playground_assets/4b746905-3d25-4a7b-90e8-deb73b8239e6-kwd5k-200h.png"
         alt="image1363130"
         class="perfil-image13"
       />
       <img
-        src="/playground_assets/bd924dee-9ecc-4208-817b-39418bc7b704-k4k-300h.png"
+        src="/playground_assets/7a5f2171-744b-49f6-b0ae-3508b14c3c4a-e1r-300h.png"
         alt="image1463132"
         class="perfil-image14"
       />
+      <button class="perfil-rectangle41"> <span class="perfil-text07">Pagar suscripción</span>  </button>
+      
       <img
-        src="/playground_assets/bb369675-9730-4e28-9955-d3967d159362-z17o.svg"
-        alt="Rectangle4110225"
-        class="perfil-rectangle41"
-      />
-      <span class="perfil-text07">Pagar suscripción</span>
-      <img
-        src="/playground_assets/99026353-80d4-42be-a1de-fb77235d1f4f-1jzj.svg"
+        src="/playground_assets/013bb60d-b558-4eaf-81e4-21e1d0c03978-0ymb.svg"
         alt="Rectangle4210380"
         class="perfil-rectangle42"
       />
@@ -88,7 +88,7 @@
       <span class="perfil-text09">
         <span class="perfil-text10">
           Te quedan
-          <span v-html="raw5gql"></span>
+          <span v-html="raww0h0"></span>
         </span>
         <span class="perfil-text11">5</span>
         <span class="perfil-text12">días para renovar tu suscripción.</span>
@@ -99,18 +99,33 @@
 </template>
 
 <script>
+import axios from 'axios'
 export default {
   name: 'Perfil',
 
   data() {
     return {
-      raw5gql: ' ',
-    }
+      raww0h0: ' ',
+      usuario:{}
+      }
   },
 
-  metaInfo: {
-    title: 'exported project',
+  methods: {
+    inicio() {
+      this.$router.push("/")
+    },
+    editar() {
+      this.$router.push("/editarCuenta")
+    },
+    async getusuario(){
+      let response = await axios.get('http://localhost:5000/api/users/1');
+      this.usuario = response.data[0];
+      console.log(this.usuario.lnames,'USUARIOOOO')
+    }
   },
+  created: async function(){
+    this.getusuario()
+  }
 }
 </script>
 
@@ -128,7 +143,6 @@ export default {
   box-sizing: border-box;
   align-items: flex-start;
   border-color: transparent;
-  background-color: rgba(216, 248, 239, 1);
 }
 .perfil-rectangle28 {
   top: 0px;
@@ -268,9 +282,24 @@ export default {
   border-radius: 66px;
   background-color: rgba(255, 255, 255, 1);
 }
+.perfil-rectanglenuevo {
+  top: 365px;
+  left: 352px;
+  width: 468px;
+  height: 50px;
+  position: absolute;
+  box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25) ;
+  box-sizing: border-box;
+  object-fit: cover;
+  border-color: rgba(1, 73, 4, 1);
+  border-style: solid;
+  border-width: 1px;
+  border-radius: 66px;
+  background-color: rgba(255, 255, 255, 1);
+}
 .perfil-text03 {
-  top: 203px;
-  left: 486px;
+  top: 207px;
+  left: 468px;
   color: rgba(1, 73, 4, 1);
   height: auto;
   position: absolute;
@@ -301,6 +330,22 @@ export default {
 }
 .perfil-text04 {
   top: 291px;
+  left: 468px;
+  color: rgba(1, 73, 4, 1);
+  height: auto;
+  position: absolute;
+  font-size: 20px;
+  align-self: auto;
+  font-style: normal;
+  text-align: left;
+  font-family: Archivo;
+  font-weight: 700px;
+  line-height: normal;
+  font-stretch: normal;
+  text-decoration: none;
+}
+.perfil-textnuevo {
+  top: 375px;
   left: 468px;
   color: rgba(1, 73, 4, 1);
   height: auto;
@@ -352,7 +397,6 @@ export default {
   color: rgba(1, 73, 4, 1);
   width: 127px;
   height: auto;
-  position: absolute;
   font-size: 22px;
   align-self: auto;
   font-style: normal;
@@ -397,7 +441,7 @@ export default {
   border-color: transparent;
 }
 .perfil-rectangle41 {
-  top: 365px;
+  top: 431px;
   left: 427px;
   width: 299px;
   height: 40px;
@@ -417,7 +461,6 @@ export default {
   color: rgba(1, 73, 4, 1);
   width: 194px;
   height: auto;
-  position: absolute;
   font-size: 22px;
   align-self: auto;
   font-style: normal;

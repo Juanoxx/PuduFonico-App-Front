@@ -21,6 +21,7 @@
         src="/playground_assets/3c8fa645-ec76-4c10-aa14-eab8f82018dd-w4s8-200h.png"
         alt="imagen20220421172719085previewrev115518"
         class="inicio-imagen20220421172719085previewrev11"
+        v-on:click="cuenta"
       />
       <span class="inicio-text">Tu cuenta</span>
       <span class="inicio-text01">Crear Sala</span>
@@ -266,6 +267,7 @@ export default {
       raw5dmj: ' ',
       raws67h: ' ',
       kids: {id:"cvp-011"},
+      kids: [{id:"01",nombre:"Benjamin"},{},{},{}]
     }
   },
   methods: {
@@ -275,6 +277,9 @@ export default {
     cvp() {
       this.$router.push("/perfilcvp/1")
     },
+    cuenta(){
+      this.$router.push("/perfil")
+    }
   },
 }
 </script>

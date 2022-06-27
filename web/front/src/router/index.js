@@ -5,7 +5,8 @@ import Inicio from '../views/inicio.vue'
 import CreacionDeCuenta from '../views/creaciondecuenta.vue'
 import RecuperarPass from '../views/recuperarcontrasea.vue'
 import Perfil from '../views/perfil-c-v-p.vue'
-
+import PerfilUsuario from '../views/perfil'
+import EditarCuenta from '../views/editarperfil'
 const routes = [
   {
     path: '/',
@@ -31,6 +32,16 @@ const routes = [
     path: '/perfilcvp/1',
     name: 'perfil',
     component: Perfil
+  },
+  {
+    path: '/perfil',
+    name: 'perfilUsuario',
+    component: PerfilUsuario
+  },
+  {
+    path: '/editarCuenta',
+    name: 'editarCuenta',
+    component: EditarCuenta
   },
   {
     path: '/about',

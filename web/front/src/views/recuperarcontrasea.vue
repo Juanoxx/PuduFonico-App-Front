@@ -26,6 +26,7 @@
         src="/playground_assets/847b0e62-ab43-498a-b74c-e8eeb0174b67-h0td-300h.png"
         alt="logoProyecto2117326"
         class="recuperarcontrasea-logo-proyecto2"
+        v-on:click="inicio"
       />
       <span class="recuperarcontrasea-text">¿Olvidaste tu contraseña?</span>
       

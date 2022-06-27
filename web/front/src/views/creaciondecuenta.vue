@@ -1,10 +1,25 @@
 <template>
   <div class="creacindecuenta-container">
     <div class="creacindecuenta-creacindecuenta">
+      <div v-if="show1" class="modal-mask">
+          <div class="modal-wrapper">
+            <div class="modal-container">
+              <div class="modal-header">
+                <slot name="header">Cuenta creada exitosamente</slot>
+              </div>
+
+              <button
+                class="text-xs-center"
+                @click="cerrarPopup"
+              >OK</button>
+            </div>
+          </div>
+        </div>
       <img
         src="/playground_assets/e60bdd26-70fa-437b-b1f4-d635b4f53116-1zov-300h.png"
         alt="logoProyecto2117290"
         class="creacindecuenta-logo-proyecto2"
+        v-on:click="cerrarPopup"
       />
       <span class="creacindecuenta-text">Crear cuenta</span>
       
@@ -45,6 +60,7 @@
 </template>
 
 <script>
+import axios from 'axios'
 export default {
   name: 'Creacindecuenta',
   data() {
@@ -55,6 +71,7 @@ export default {
       nombres:'',
       apellidos:'',
       image:'',
+      show1:false,
     }
   },
   methods: {
@@ -62,7 +79,9 @@ export default {
       this.$router.push("/inicio")
     },
     registro() {
-      this.$router.push("/")
+      this.nuevaCuenta()
+      this.show1=true
+      //this.$router.push("/")
     },
     onFileChange(e) {
       var files = e.target.files || e.dataTransfer.files;
@@ -82,6 +101,15 @@ export default {
     },
     removeImage: function (e) {
       this.image = '';
+    },
+    nuevaCuenta: async function(){
+      if(this.contraseña==this.conf){
+        let response= await axios.post('http://localhost:5000/api/users/',{fname:this.nombres, lnames:this.apellidos,email:this.correo,password:this.contraseña})
+        console.log('response', response.data);
+      }
+    },
+    cerrarPopup(){
+       this.$router.push("/")
     }
   },
 }
@@ -383,5 +411,44 @@ img {
   line-height: normal;
   font-stretch: normal;
   text-decoration: none;
+}
+.modal-mask {
+  position: fixed;
+  z-index: 9998;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: table;
+  transition: opacity 0.3s ease;
+}
+
+.modal-wrapper {
+  display: table-cell;
+  vertical-align: middle;
+}
+
+.modal-container {
+  width: 300px;
+  margin: 0px auto;
+  padding: 20px 30px;
+  background-color: #fff;
+  border-radius: 2px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.33);
+  transition: all 0.3s ease;
+}
+
+.modal-header h3 {
+  margin-top: 0;
+  color: #42b983;
+}
+
+.modal-body {
+  margin: 20px 0;
+}
+
+.modal-default-button {
+  float: right;
 }
 </style>
