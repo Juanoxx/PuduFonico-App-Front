@@ -118,9 +118,8 @@ export default {
       this.$router.push("/editarCuenta")
     },
     async getusuario(){
-      let response = await axios.get('http://localhost:5000/api/users/1');
+      let response = await axios.get('http://localhost:5000/api/users/8');
       this.usuario = response.data[0];
-      console.log(this.usuario.lnames,'USUARIOOOO')
     }
   },
   created: async function(){

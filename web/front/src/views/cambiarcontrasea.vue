@@ -91,17 +91,18 @@ export default {
       this.$router.push("/cambiarPass")
     },
     async getusuario(){
-      let response = await axios.get('http://localhost:5000/api/users/1');
+      let response = await axios.get('http://localhost:5000/api/users/8');
       this.usuario = response.data[0];
-      console.log(this.usuario.lnames,'USUARIOOOO')
     },
     async editar(){
       if(this.Passwords.antigua==this.usuario.password){
         if(this.Passwords.nueva!=''){
           this.usuario.password=this.Passwords.nueva
-          let response = await axios.put('http://localhost:5000/api/users/1',this.usuario);
+          let response = await axios.put('http://localhost:5000/api/users/8',this.usuario);
           console.log(response.data)
           this.show=true
+          this.Passwords={antigua:'',nueva:'',confirmacion:''}
+
         }
         else{
           console.log('error2')
