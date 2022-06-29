@@ -1,4 +1,11 @@
 {
   "name": "MyApp",
-  "displayName": "MyApp"
+  "displayName": "MyApp",
+  "expo": {
+      "plugins": ["@react-native-voice/voice",
+        {
+          "microphonePermission": "CUSTOM: Allow MyApp to access the microphone",
+          "speechRecognitionPermission": "CUSTOM: Allow MyApp to securely recognize user speech"
+        }]
+    }
 }
