@@ -148,11 +148,7 @@ export default {
     async getCVP(){
       let response = await axios.get('http://localhost:5000/api/cvp/');
       this.kids = response.data;
-    },    
-    cambio: function(id){
-      console.log(id)
-      this.c=id
-    }
+    },  
   },  
   created: async function(){
     this.getCVP()

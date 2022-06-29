@@ -82,7 +82,7 @@ export default {
   name: 'CreacindeCVP',
   data() {
     return {
-      CVP:{p_fname:'',p_lname1:'',p_lname2:'',user_id:1},
+      CVP:{p_fname:'',p_lname1:'',p_lname2:'',user_id:8},
       counter:1,
       show:false,
       mensaje:'',
