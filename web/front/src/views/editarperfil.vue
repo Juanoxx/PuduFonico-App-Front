@@ -94,7 +94,6 @@ export default {
     async getusuario(){
       let response = await axios.get('http://localhost:5000/api/users/1');
       this.usuario = response.data[0];
-      console.log(this.usuario.lnames,'USUARIOOOO')
     },
     async editar(){
       let response = await axios.put('http://localhost:5000/api/users/1',this.usuario);

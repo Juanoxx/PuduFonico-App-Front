@@ -46,7 +46,6 @@
         Nivel 2
         <span v-html="raw0vro"></span>
       </span>
-      <span class="perfil-c-v-p-text08">Indicador general de rendimiento</span>
       <span class="perfil-c-v-p-text09">Habilidades seleccionables</span>
       <img
         src="/playground_assets/eb9672da-84d8-40e2-823b-5fd89c8e3f0c-pepa.svg"
@@ -58,13 +57,9 @@
         alt="Rectangle791563"
         class="perfil-c-v-p-rectangle79"
       />
-      <span class="perfil-c-v-p-text10">Martin Rodriguez</span>
-      <span class="perfil-c-v-p-text11">a99x7s</span>
-      <img
-        src="/playground_assets/d9c2e079-ecbc-4419-ac7d-e2158deec02d-guvt-200h.png"
-        alt="image1211592"
-        class="perfil-c-v-p-image12"
-      />
+      <span class="perfil-c-v-p-text10">{{cvp[0].p_fname }} {{cvp[0].p_lname1 }} {{cvp[0].p_lname2 }}</span>
+      <span class="perfil-c-v-p-text11">{{cvp[0].access_code }}</span>
+      
       <img
         src="/playground_assets/798023f4-789d-42b0-ae4c-b4ffe63ff599-ze0se.svg"
         alt="Rectangle60115118"
@@ -250,6 +245,7 @@
 </template>
 
 <script>
+import axios from 'axios'
 export default {
   name: 'PerfilCVP',
 
@@ -259,6 +255,7 @@ export default {
       raw0vro: ' ',
       raw2np9: ' ',
       raw7ggs: ' ',
+      cvp:{}
     }
   },
 
@@ -266,6 +263,13 @@ export default {
     inicio() {
       this.$router.push("/")
     },
+    async getCVP(){
+      let response = await axios.get('http://localhost:5000/api/cvp/'+this.$route.params.id);
+      this.cvp = response.data;
+    }
+  },
+  created: async function(){
+    this.getCVP()
   },
 }
 </script>
@@ -542,7 +546,6 @@ export default {
   top: 251px;
   left: 333px;
   color: rgba(1, 73, 4, 1);
-  width: 201px;
   height: auto;
   position: absolute;
   font-size: 24px;

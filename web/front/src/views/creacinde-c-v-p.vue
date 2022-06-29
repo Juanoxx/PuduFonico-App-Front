@@ -59,7 +59,7 @@
       <span class="creacinde-c-v-p-text03">
         Crear una nueva consulta virtual personalizada(CVP)
       </span>
-      <input v-model="CVP.p_name" placeholder=""  class="creacinde-c-v-p-rectangle32" />
+      <input v-model="CVP.p_fname" placeholder=""  class="creacinde-c-v-p-rectangle32" />
 
       <span class="creacinde-c-v-p-text04">Nombres</span>
       <span class="creacinde-c-v-p-text05">Apellido paterno</span>
@@ -82,7 +82,7 @@ export default {
   name: 'CreacindeCVP',
   data() {
     return {
-      CVP:{p_name:'',p_lname1:'',p_lname2:'',user_id:1},
+      CVP:{p_fname:'',p_lname1:'',p_lname2:'',user_id:1},
       counter:1,
       show:false,
       mensaje:'',
@@ -101,13 +101,13 @@ export default {
             console.log('response', response.data);
             this.mensaje='CVP creada exitosamente'
             this.show=true
-            fail=false
+            this.fail=false
         }
         catch(error){
           console.log(error)
           this.mensaje='Ocurrio un error'
           this.show=true
-          fail=true
+          this.fail=true
         }
         
       }
