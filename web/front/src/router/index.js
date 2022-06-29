@@ -1,5 +1,4 @@
 import { createRouter, createWebHistory } from 'vue-router'
-import HomeView from '../views/HomeView.vue'
 import Login from '../views/login.vue'
 import Inicio from '../views/inicio.vue'
 import CreacionDeCuenta from '../views/creaciondecuenta.vue'
@@ -7,6 +6,12 @@ import RecuperarPass from '../views/recuperarcontrasea.vue'
 import Perfil from '../views/perfil-c-v-p.vue'
 import PerfilUsuario from '../views/perfil'
 import EditarCuenta from '../views/editarperfil'
+import CambiarPass from '../views/cambiarcontrasea'
+import Contacto from '../views/contacto-v2'
+import Recomendaciones from '../views/recomendaciones'
+import SoporteTecnico from '../views/soportetcnico'
+import CreacionCVP from '../views/creacinde-c-v-p'
+
 const routes = [
   {
     path: '/',
@@ -29,7 +34,7 @@ const routes = [
     component: RecuperarPass
   },
   {
-    path: '/perfilcvp/1',
+    path: '/perfilcvp/:id',
     name: 'perfil',
     component: Perfil
   },
@@ -44,6 +49,31 @@ const routes = [
     component: EditarCuenta
   },
   {
+    path: '/cambiarPass',
+    name: 'cambiarContrasea',
+    component: CambiarPass
+  },
+  {
+    path: '/contacto',
+    name: 'contacto',
+    component: Contacto
+  },
+  {
+    path: '/recomendaciones',
+    name: 'recomendaciones',
+    component: Recomendaciones
+  },
+  {
+    path: '/soporteTecnico',
+    name: 'soporteTecnico',
+    component: SoporteTecnico
+  },
+  {
+    path: '/creacionCVP',
+    name: 'creacionCVP',
+    component: CreacionCVP
+  },
+  {
     path: '/about',
     name: 'about',
     // route level code-splitting
@@ -52,7 +82,6 @@ const routes = [
     component: () => import(/* webpackChunkName: "about" */ '../views/AboutView.vue')
   }
 ]
-
 const router = createRouter({
   history: createWebHistory(process.env.BASE_URL),
   routes

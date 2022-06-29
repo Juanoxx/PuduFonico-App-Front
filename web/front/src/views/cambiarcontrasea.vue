@@ -1,11 +1,11 @@
 <template>
-  <div class="editarperfil-container">
-    <div class="editarperfil-editarperfil">
+  <div class="cambiarcontrasea-container">
+    <div class="cambiarcontrasea-cambiarcontrasea">
       <div v-if="show" class="modal-mask">
           <div class="modal-wrapper">
             <div class="modal-container">
               <div class="modal-header">
-                <slot name="header">Datos cambiados exitosamente</slot>
+                <slot name="header">Datos cambiados exitosamente {{NewPass}}</slot>
               </div>
 
               <button
@@ -16,58 +16,57 @@
           </div>
         </div>
       <img
-        src="/playground_assets/5618cc77-3cf0-4cb0-9ba9-d95f11304922-5ogi.svg"
-        alt="Rectangle2863134"
-        class="editarperfil-rectangle28"
+        src="/playground_assets/f1c2b10f-017f-4983-87b6-c1fc9e365c07-xcv.svg"
+        alt="Rectangle2864160"
+        class="cambiarcontrasea-rectangle28"
       />
       <img
-        src="/playground_assets/f7cc77fa-3c65-4c2c-8f60-e26cb22f3a4d-p7si-200h.png"
-        alt="logoProyecto263135"
-        class="editarperfil-logo-proyecto2"
+        src="/playground_assets/01a980f1-ed03-43a5-be4b-a961daa01f4c-ecn6-200h.png"
+        alt="logoProyecto264161"
+        class="cambiarcontrasea-logo-proyecto2"
         v-on:click="inicio"
       />
       <img
-        src="/playground_assets/b750ee58-8260-40de-b0b2-07daaaffab95-3wag-200h.png"
-        alt="pudufoni163136"
-        class="editarperfil-pudufoni1"
+        src="/playground_assets/59143728-e568-4258-a40a-7c9833d7afe4-dg4p-200h.png"
+        alt="pudufoni164162"
+        class="cambiarcontrasea-pudufoni1"
       />
       <img
-        src="/playground_assets/00af2c1f-fdc1-49b0-bf5f-236e9299922a-ftkt-200h.png"
-        alt="imagen20220421172719085previewrev1163137"
-        class="editarperfil-imagen20220421172719085previewrev11"
+        src="/playground_assets/a997d701-fa3c-4652-be67-62098e9912f0-lt8f-200h.png"
+        alt="imagen20220421172719085previewrev1164163"
+        class="cambiarcontrasea-imagen20220421172719085previewrev11"
       />
-      <span class="editarperfil-text">Tu cuenta</span>
-      <span class="editarperfil-text01">Crear Sala</span>
-      <span class="editarperfil-text02">Contacto</span>
+      <span class="cambiarcontrasea-text">Tu cuenta</span>
+      <span class="cambiarcontrasea-text1">Crear Sala</span>
+      <span class="cambiarcontrasea-text2">Contacto</span>
       <img
-        src="/playground_assets/6fd2edd3-a0dc-4856-aebb-bd6d151f4f46-bgts-200w.png"
-        alt="imagen20220421185711919previewrev2163141"
-        class="editarperfil-imagen20220421185711919previewrev21"
-      />
-      <img
-        src="/playground_assets/17b833a6-2d82-4605-a31b-17fd938dc6bb-0ow-200h.png"
-        alt="imagen20220421190215610previewrev1163142"
-        class="editarperfil-imagen20220421190215610previewrev11"
+        src="/playground_assets/09c8a949-a365-4406-b639-26910a574af0-zbr-200w.png"
+        alt="imagen20220421185711919previewrev2164167"
+        class="cambiarcontrasea-imagen20220421185711919previewrev21"
       />
       <img
-        src="/playground_assets/731c34f4-3016-4379-a521-666dd69e2d11-x0sj-200w.png"
-        alt="imagen20220421193036317163143"
-        class="editarperfil-imagen202204211930363171"
+        src="/playground_assets/51cf285e-9b26-4be4-8edb-d0627841d74b-qvr8-200h.png"
+        alt="imagen20220421190215610previewrev1164168"
+        class="cambiarcontrasea-imagen20220421190215610previewrev11"
       />
-      <input v-model="usuario.fname" placeholder="usuario.fname"  class="editarperfil-rectangle25"/>
+      <img
+        src="/playground_assets/082975c6-3a26-4c6b-872e-e49e69c62ac2-xjyo-200w.png"
+        alt="imagen20220421193036317164169"
+        class="cambiarcontrasea-imagen202204211930363171"
+      />
+      <input v-model="Passwords.antigua" placeholder="" type="password" class="cambiarcontrasea-rectangle25"/>
+
+      <span class="cambiarcontrasea-text3">Contraseña antigua</span>
+      <span class="cambiarcontrasea-text4">Contraseña nueva</span>
       
-      <span class="editarperfil-text04">Nombres</span>
-      <span class="editarperfil-text05">Apellidos</span>
-      <span class="editarperfil-textnuevo">Correo</span>
-      <input v-model="usuario.lnames" placeholder="usuario.lnames"  class="editarperfil-rectangle29"/>
-      <input v-model="usuario.email" placeholder="usuario.email"  class="editarperfil-rectanglenuevo"/>
-      <button v-on:click="cambiarContraseña" class="editarperfil-rectangle281"> <span class="editarperfil-text07">Cambiar contraseña</span>  </button>
-      <button v-on:click="editar" class="editarperfil-rectangle30"> <span class="editarperfil-text08">Enviar cambios</span>  </button>
+      <input v-model="Passwords.nueva" placeholder="" type="password" class="cambiarcontrasea-rectangle29"/>
+
+      <span class="cambiarcontrasea-text5">Confirmar contraseña nueva</span>
+      
+      <input v-model="Passwords.confirmacion" placeholder="" type="password" class="cambiarcontrasea-rectangle31"/>
+      <button v-on:click="editar" class="cambiarcontrasea-rectangle30"> <span class="cambiarcontrasea-text6">Enviar cambios</span>  </button>
 
       
-      
-      
-      <span class="editarperfil-text09">Cambiar foto del perfil</span>
     </div>
   </div>
 </template>
@@ -75,15 +74,15 @@
 <script>
 import axios from 'axios'
 export default {
-  name: 'Editarperfil',
+  name: 'Cambiarcontrasea',
   data() {
     return {
       raww0h0: ' ',
       usuario:{},
-      show:false
+      show:false,
+      Passwords:{antigua:'',nueva:'',confirmacion:''}
       }
   },
-
   methods: {
     inicio() {
       this.$router.push("/")
@@ -97,9 +96,22 @@ export default {
       console.log(this.usuario.lnames,'USUARIOOOO')
     },
     async editar(){
-      let response = await axios.put('http://localhost:5000/api/users/1',this.usuario);
-      console.log(response.data)
-      this.show=true
+      if(this.Passwords.antigua==this.usuario.password){
+        if(this.Passwords.nueva!=''){
+          this.usuario.password=this.Passwords.nueva
+          let response = await axios.put('http://localhost:5000/api/users/1',this.usuario);
+          console.log(response.data)
+          this.show=true
+        }
+        else{
+          console.log('error2')
+        }
+      }
+      else{
+        console.log('error 1',this.usuario.password)
+      }
+      console.log(this.Passwords)
+      
     },
     cerrarPopup(){
       this.show=false
@@ -109,14 +121,13 @@ export default {
     this.getusuario()
   }
 }
-
 </script>
 
 <style scoped>
-.editarperfil-container {
+.cambiarcontrasea-container {
   min-height: 100vh;
 }
-.editarperfil-editarperfil {
+.cambiarcontrasea-cambiarcontrasea {
   width: 1512px;
   height: 982px;
   display: flex;
@@ -127,7 +138,7 @@ export default {
   align-items: flex-start;
   border-color: transparent;
 }
-.editarperfil-rectangle28 {
+.cambiarcontrasea-rectangle28 {
   top: 0px;
   left: 0px;
   width: 1512px;
@@ -138,7 +149,7 @@ export default {
   border-color: transparent;
   background-image: linear-gradient(180deg, rgba(124, 209, 184, 1) 0%, rgba(124, 209, 184, 0) 100%);
 }
-.editarperfil-logo-proyecto2 {
+.cambiarcontrasea-logo-proyecto2 {
   top: 0px;
   left: 726px;
   width: 61px;
@@ -149,7 +160,7 @@ export default {
   border-color: transparent;
   border-radius: 77px;
 }
-.editarperfil-pudufoni1 {
+.cambiarcontrasea-pudufoni1 {
   top: 57px;
   left: 695px;
   width: 122px;
@@ -159,7 +170,7 @@ export default {
   object-fit: cover;
   border-color: transparent;
 }
-.editarperfil-imagen20220421172719085previewrev11 {
+.cambiarcontrasea-imagen20220421172719085previewrev11 {
   top: 5px;
   left: 1428px;
   width: 54px;
@@ -169,7 +180,7 @@ export default {
   object-fit: cover;
   border-color: transparent;
 }
-.editarperfil-text {
+.cambiarcontrasea-text {
   top: 70px;
   left: 1417px;
   color: rgba(1, 73, 4, 1);
@@ -185,7 +196,7 @@ export default {
   font-stretch: normal;
   text-decoration: none;
 }
-.editarperfil-text01 {
+.cambiarcontrasea-text1 {
   top: 70px;
   left: 1321px;
   color: rgba(1, 73, 4, 1);
@@ -201,7 +212,7 @@ export default {
   font-stretch: normal;
   text-decoration: none;
 }
-.editarperfil-text02 {
+.cambiarcontrasea-text2 {
   top: 68px;
   left: 1225px;
   color: rgba(1, 73, 4, 1);
@@ -217,7 +228,7 @@ export default {
   font-stretch: normal;
   text-decoration: none;
 }
-.editarperfil-imagen20220421185711919previewrev21 {
+.cambiarcontrasea-imagen20220421185711919previewrev21 {
   top: 3px;
   left: 1325px;
   width: 60px;
@@ -227,7 +238,7 @@ export default {
   object-fit: cover;
   border-color: transparent;
 }
-.editarperfil-imagen20220421190215610previewrev11 {
+.cambiarcontrasea-imagen20220421190215610previewrev11 {
   top: -4px;
   left: 1225px;
   width: 70px;
@@ -237,9 +248,9 @@ export default {
   object-fit: cover;
   border-color: transparent;
 }
-.editarperfil-imagen202204211930363171 {
-  top: 156px;
-  left: 687px;
+.cambiarcontrasea-imagen202204211930363171 {
+  top: 82px;
+  left: 60px;
   width: 100px;
   height: 138px;
   position: absolute;
@@ -250,10 +261,10 @@ export default {
   border-width: 1px;
   border-radius: 100px;
 }
-.editarperfil-rectangle25 {
-  top: 377px;
-  left: 513px;
-  width: 468px;
+.cambiarcontrasea-rectangle25 {
+  top: 215px;
+  left: 439px;
+  width: 907px;
   height: 50px;
   position: absolute;
   box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25) ;
@@ -265,26 +276,11 @@ export default {
   border-radius: 66px;
   background-color: rgba(255, 255, 255, 1);
 }
-.editarperfil-text03 {
-  top: 391px;
-  left: 647px;
+.cambiarcontrasea-text3 {
+  top: 227px;
+  left: 209px;
   color: rgba(1, 73, 4, 1);
-  height: auto;
-  position: absolute;
-  font-size: 20px;
-  align-self: auto;
-  font-style: normal;
-  text-align: left;
-  font-family: Archivo;
-  font-weight: 700px;
-  line-height: normal;
-  font-stretch: normal;
-  text-decoration: none;
-}
-.editarperfil-text04 {
-  top: 391px;
-  left: 406px;
-  color: rgba(1, 73, 4, 1);
+  width: 230px;
   height: auto;
   position: absolute;
   font-size: 24px;
@@ -297,11 +293,11 @@ export default {
   font-stretch: normal;
   text-decoration: none;
 }
-.editarperfil-text05 {
-  top: 440px;
-  left: 406px;
+.cambiarcontrasea-text4 {
+  top: 307px;
+  left: 209px;
   color: rgba(1, 73, 4, 1);
-  width: 131px;
+  width: 230px;
   height: auto;
   position: absolute;
   font-size: 24px;
@@ -314,11 +310,26 @@ export default {
   font-stretch: normal;
   text-decoration: none;
 }
-.editarperfil-textnuevo {
-  top: 490px;
-  left: 406px;
+.cambiarcontrasea-rectangle29 {
+  top: 303px;
+  left: 439px;
+  width: 907px;
+  height: 50px;
+  position: absolute;
+  box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25) ;
+  box-sizing: border-box;
+  object-fit: cover;
+  border-color: rgba(1, 73, 4, 1);
+  border-style: solid;
+  border-width: 1px;
+  border-radius: 66px;
+  background-color: rgba(255, 255, 255, 1);
+}
+.cambiarcontrasea-text5 {
+  top: 401px;
+  left: 209px;
   color: rgba(1, 73, 4, 1);
-  width: 131px;
+  width: 218px;
   height: auto;
   position: absolute;
   font-size: 24px;
@@ -331,10 +342,10 @@ export default {
   font-stretch: normal;
   text-decoration: none;
 }
-.editarperfil-rectangle29 {
-  top: 430px;
-  left: 513px;
-  width: 468px;
+.cambiarcontrasea-rectangle31 {
+  top: 397px;
+  left: 439px;
+  width: 907px;
   height: 50px;
   position: absolute;
   box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25) ;
@@ -346,40 +357,9 @@ export default {
   border-radius: 66px;
   background-color: rgba(255, 255, 255, 1);
 }
-.editarperfil-rectanglenuevo {
-  top: 485px;
-  left: 513px;
-  width: 468px;
-  height: 50px;
-  position: absolute;
-  box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25) ;
-  box-sizing: border-box;
-  object-fit: cover;
-  border-color: rgba(1, 73, 4, 1);
-  border-style: solid;
-  border-width: 1px;
-  border-radius: 66px;
-  background-color: rgba(255, 255, 255, 1);
-}
-.editarperfil-text06 {
-  top: 479px;
-  left: 629px;
-  color: rgba(1, 73, 4, 1);
-  height: auto;
-  position: absolute;
-  font-size: 20px;
-  align-self: auto;
-  font-style: normal;
-  text-align: left;
-  font-family: Archivo;
-  font-weight: 700px;
-  line-height: normal;
-  font-stretch: normal;
-  text-decoration: none;
-}
-.editarperfil-rectangle281 {
-  top: 579px;
-  left: 464px;
+.cambiarcontrasea-rectangle30 {
+  top: 514px;
+  left: 636px;
   width: 266px;
   height: 40px;
   position: absolute;
@@ -392,60 +372,13 @@ export default {
   border-radius: 46px;
   background-color: rgba(124, 209, 184, 1);
 }
-.editarperfil-rectangle30 {
-  top: 579px;
-  left: 774px;
-  width: 266px;
-  height: 40px;
-  position: absolute;
-  box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25) ;
-  box-sizing: border-box;
-  object-fit: cover;
-  border-color: rgba(1, 73, 4, 1);
-  border-style: solid;
-  border-width: 1px;
-  border-radius: 46px;
-  background-color: rgba(124, 209, 184, 1);
-}
-.editarperfil-text07 {
-  top: 589px;
-  left: 489px;
+.cambiarcontrasea-text6 {
+  top: 523px;
+  left: 684px;
   color: rgba(1, 73, 4, 1);
   width: 254px;
   height: auto;
   font-size: 22px;
-  align-self: auto;
-  font-style: normal;
-  text-align: left;
-  font-family: Archivo;
-  font-weight: 700px;
-  line-height: normal;
-  font-stretch: normal;
-  text-decoration: none;
-}
-.editarperfil-text08 {
-  top: 588px;
-  left: 822px;
-  color: rgba(1, 73, 4, 1);
-  width: 254px;
-  height: auto;
-  font-size: 22px;
-  align-self: auto;
-  font-style: normal;
-  text-align: left;
-  font-family: Archivo;
-  font-weight: 700px;
-  line-height: normal;
-  font-stretch: normal;
-  text-decoration: none;
-}
-.editarperfil-text09 {
-  top: 305px;
-  left: 770px;
-  color: rgba(1, 73, 4, 1);
-  height: auto;
-  position: absolute;
-  font-size: 16px;
   align-self: auto;
   font-style: normal;
   text-align: left;

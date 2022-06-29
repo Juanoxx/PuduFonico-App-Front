@@ -193,7 +193,7 @@
         alt="Rectangle74122463"
         class="perfil-c-v-p-rectangle74"
       />
-      <span class="perfil-c-v-p-text25">/d/</span>
+      <span class="perfil-c-v-p-text25">{{this.$route.params.id}}</span>
       <span class="perfil-c-v-p-text26">/sh/</span>
       <span class="perfil-c-v-p-text27">/c/</span>
       <span class="perfil-c-v-p-text28">/j/</span>
