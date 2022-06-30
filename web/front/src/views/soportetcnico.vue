@@ -35,6 +35,7 @@
         src="/playground_assets/25fce1e3-dbfb-4ffa-8227-fd6eaa538e94-i3yu-200h.png"
         alt="imagen20220421172719085previewrev1110334"
         class="soportetcnico-imagen20220421172719085previewrev11"
+        v-on:click="cuenta"
       />
       <span class="soportetcnico-text">Tu cuenta</span>
       <span class="soportetcnico-text1">Crear Sala</span>
@@ -43,13 +44,15 @@
         src="/playground_assets/c2b30271-a28d-4826-b824-084df60cd6ec-i5bs-200h.png"
         alt="imagen20220421185711919previewrev2110338"
         class="soportetcnico-imagen20220421185711919previewrev21"
+        v-on:click="crearCVP"
       />
       <img
         src="/playground_assets/dfb710fc-f11b-4a3d-8c22-16f3d9ce62a4-pcqb-200h.png"
         alt="imagen20220421190215610previewrev1110339"
         class="soportetcnico-imagen20220421190215610previewrev11"
+        v-on:click="contacto"
       />
-      <span class="soportetcnico-text3">Explicanos tu problema</span>
+      <span class="soportetcnico-text3">Explícanos tu problema</span>
       
       <textarea v-model="mensaje" placeholder=""  class="soportetcnico-rectangle36" />
 
@@ -83,7 +86,7 @@ export default {
   },
   methods: {
     inicio() {
-      this.$router.push("/")
+      this.$router.push("/inicio")
     },
     enviar() {
       if (this.mensaje!=''){
@@ -93,7 +96,17 @@ export default {
     },
     cerrarPopup(){
       this.show=false
-    }
+    },
+    
+    cuenta(){
+      this.$router.push("/perfil")
+    },
+    contacto(){
+      this.$router.push("/contacto")
+    },
+    crearCVP(){
+      this.$router.push("/creacionCVP")
+    },
   },
 }
 </script>

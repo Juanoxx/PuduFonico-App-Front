@@ -11,6 +11,7 @@ import Contacto from '../views/contacto-v2'
 import Recomendaciones from '../views/recomendaciones'
 import SoporteTecnico from '../views/soportetcnico'
 import CreacionCVP from '../views/creacinde-c-v-p'
+import DetalleJuegos from '../views/detallediscriminacinauditiva'
 
 const routes = [
   {
@@ -72,6 +73,11 @@ const routes = [
     path: '/creacionCVP',
     name: 'creacionCVP',
     component: CreacionCVP
+  },
+  {
+    path: '/:id/:fonema/:nivel/detalleJuegos',
+    name: 'detalleJuegos',
+    component: DetalleJuegos
   },
   {
     path: '/about',

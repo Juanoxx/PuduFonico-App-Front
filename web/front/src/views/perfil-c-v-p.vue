@@ -21,6 +21,7 @@
         src="/playground_assets/533c6f3f-10a0-47b5-8ff3-8a9f5880ec2b-vynj-200h.png"
         alt="imagen20220421172719085previewrev1111549"
         class="perfil-c-v-p-imagen20220421172719085previewrev11"
+        v-on:click="cuenta"
       />
       <span class="perfil-c-v-p-text">Tu cuenta</span>
       <span class="perfil-c-v-p-text01">Crear Sala</span>
@@ -29,11 +30,13 @@
         src="/playground_assets/4e1c6468-ff93-4883-b456-ef1029082e58-uhy8-200w.png"
         alt="imagen20220421185711919previewrev2111587"
         class="perfil-c-v-p-imagen20220421185711919previewrev21"
+        v-on:click="crearCVP"
       />
       <img
         src="/playground_assets/e91449e6-56bd-43c5-af20-4f36a440ad84-ximj-200h.png"
         alt="imagen20220421190215610previewrev1111588"
         class="perfil-c-v-p-imagen20220421190215610previewrev11"
+        v-on:click="contacto"
       />
       <span class="perfil-c-v-p-text03">
         Nombre y Apellido
@@ -63,17 +66,17 @@
         <span v-else class="perfil-c-v-p-text06" v-on:click="asignarNivel(t.id)">Nivel {{t.id}}</span>
 
           <div v-if="comprobar(t.id,'r')">
-            <div class="perfil-c-v-p-rectangle51"> 
+            <div class="perfil-c-v-p-rectangle51" v-on:click="detalle('r',t.id)"> 
               <span class="perfil-c-v-p-text12">/r/</span>
             </div>
           </div>
           <div v-if="comprobar(t.id,'d')">
-            <div class="perfil-c-v-p-rectangle58"> 
+            <div class="perfil-c-v-p-rectangle58" v-on:click="detalle('d',t.id)"> 
                 <span class="perfil-c-v-p-text24">/d/</span> 
             </div>  
           </div>
-          <div v-if="comprobar(t.id,'rr')">
-            <div class="perfil-c-v-p-cuadrado1" style="center">
+          <div v-if="comprobar(t.id,'rr')" >
+            <div class="perfil-c-v-p-cuadrado1" style="center" v-on:click="detalle('rr',t.id)">
               <span class="perfil-c-v-p-text19">/rr/</span>
             </div>
           </div>
@@ -140,7 +143,10 @@ export default {
 
   methods: {
     inicio() {
-      this.$router.push("/")
+      this.$router.push("/inicio")
+    },
+    detalle(fonema,id) {
+      this.$router.push('/'+this.$route.params.id+'/'+fonema+'/'+id+'/detalleJuegos')
     },
     async getCVP(){
       let response = await axios.get('http://localhost:5000/api/cvp/'+this.$route.params.id);
@@ -206,7 +212,16 @@ export default {
           this.niveles[this.temp[i].max-1].habilidades.push(this.temp[i].skill)
       }
       console.log(this.niveles)
-    }
+    },
+    cuenta(){
+      this.$router.push("/perfil")
+    },
+    contacto(){
+      this.$router.push("/contacto")
+    },
+    crearCVP(){
+      this.$router.push("/creacionCVP")
+    },
   },
   created: async function(){
     this.getCVP()

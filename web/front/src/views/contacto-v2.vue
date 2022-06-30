@@ -10,6 +10,7 @@
         src="/playground_assets/0c4309da-851f-48ab-8d81-b01cd065148f-ooae-200h.png"
         alt="logoProyecto21024"
         class="contacto-v2-logo-proyecto2"
+        v-on:click="inicio"
       />
       <img
         src="/playground_assets/8fb9847c-cc6e-4fda-ac2c-ec85f2407485-8ypr-200h.png"
@@ -20,6 +21,7 @@
         src="/playground_assets/b15682ae-d9dc-4630-bab0-1a79b2dec6da-txcp-200h.png"
         alt="imagen20220421172719085previewrev111026"
         class="contacto-v2-imagen20220421172719085previewrev11"
+        v-on:click="cuenta"
       />
       <span class="contacto-v2-text">Tu cuenta</span>
       <span class="contacto-v2-text1">Crear Sala</span>
@@ -28,11 +30,13 @@
         src="/playground_assets/c99c6829-ec6b-458e-8bd1-9b4d4be4f84c-qyxu-200h.png"
         alt="imagen20220421185711919previewrev2110210"
         class="contacto-v2-imagen20220421185711919previewrev21"
+        v-on:click="crearCVP"
       />
       <img
         src="/playground_assets/8cc537e2-9f42-400c-9534-753f7bf3a244-24z4-200h.png"
         alt="imagen20220421190215610previewrev1110211"
         class="contacto-v2-imagen20220421190215610previewrev11"
+        
       />
       <span class="contacto-v2-text3">¿En qué podemos ayudarte?</span>
       <button v-on:click="soporte" class="contacto-v2-rectangle25"> <span class="contacto-v2-text4">Soporte técnico</span>  </button>
@@ -56,6 +60,16 @@ export default {
   methods: {
     soporte() {
       this.$router.push("/soporteTecnico")
+    },
+    inicio() {
+      this.$router.push("/inicio")
+    },
+    
+    crearCVP(){
+      this.$router.push("/creacionCVP")
+    },
+    cuenta(){
+      this.$router.push("/perfil")
     },
     recomendaciones() {
       this.$router.push("/recomendaciones")

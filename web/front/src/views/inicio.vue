@@ -10,7 +10,6 @@
         src="/playground_assets/34c5a135-bab0-4d95-ab28-662a7daee1b1-u54u-200h.png"
         alt="logoProyecto2543"
         class="inicio-logo-proyecto2"
-        v-on:click="inicio"
       />
       <img
         src="/playground_assets/f2b1cb06-9e57-4f4a-af10-9b9c94885482-flg4r-200h.png"

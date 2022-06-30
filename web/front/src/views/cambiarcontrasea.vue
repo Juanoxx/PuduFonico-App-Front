@@ -35,6 +35,7 @@
         src="/playground_assets/a997d701-fa3c-4652-be67-62098e9912f0-lt8f-200h.png"
         alt="imagen20220421172719085previewrev1164163"
         class="cambiarcontrasea-imagen20220421172719085previewrev11"
+        v-on:click="cuenta"
       />
       <span class="cambiarcontrasea-text">Tu cuenta</span>
       <span class="cambiarcontrasea-text1">Crear Sala</span>
@@ -43,11 +44,13 @@
         src="/playground_assets/09c8a949-a365-4406-b639-26910a574af0-zbr-200w.png"
         alt="imagen20220421185711919previewrev2164167"
         class="cambiarcontrasea-imagen20220421185711919previewrev21"
+        v-on:click="crearCVP"
       />
       <img
         src="/playground_assets/51cf285e-9b26-4be4-8edb-d0627841d74b-qvr8-200h.png"
         alt="imagen20220421190215610previewrev1164168"
         class="cambiarcontrasea-imagen20220421190215610previewrev11"
+        v-on:click="contacto"
       />
       <img
         src="/playground_assets/082975c6-3a26-4c6b-872e-e49e69c62ac2-xjyo-200w.png"
@@ -85,7 +88,7 @@ export default {
   },
   methods: {
     inicio() {
-      this.$router.push("/")
+      this.$router.push("/inicio")
     },
     cambiarContraseña() {
       this.$router.push("/cambiarPass")
@@ -116,7 +119,16 @@ export default {
     },
     cerrarPopup(){
       this.show=false
-    }
+    },
+    cuenta(){
+      this.$router.push("/perfil")
+    },
+    contacto(){
+      this.$router.push("/contacto")
+    },
+    crearCVP(){
+      this.$router.push("/creacionCVP")
+    },
   },
   created: async function(){
     this.getusuario()

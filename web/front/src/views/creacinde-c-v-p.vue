@@ -42,6 +42,7 @@
         src="/playground_assets/ee088c3f-f14f-4d5a-834e-17a9b67ae32a-dru-200h.png"
         alt="imagen20220421172719085previewrev1165188"
         class="creacinde-c-v-p-imagen20220421172719085previewrev11"
+        v-on:click="cuenta"
       />
       <span class="creacinde-c-v-p-text">Tu cuenta</span>
       <span class="creacinde-c-v-p-text01">Crear Sala</span>
@@ -50,11 +51,13 @@
         src="/playground_assets/4f928aed-fbc8-49c4-808a-4edc10440413-c5ph-200h.png"
         alt="imagen20220421185711919previewrev2165192"
         class="creacinde-c-v-p-imagen20220421185711919previewrev21"
+        v-on:click="crearCVP"
       />
       <img
         src="/playground_assets/1a16acc0-b147-44f8-8156-f8e6155a017b-hgpf-200h.png"
         alt="imagen20220421190215610previewrev1165193"
         class="creacinde-c-v-p-imagen20220421190215610previewrev11"
+        v-on:click="contacto"
       />
       <span class="creacinde-c-v-p-text03">
         Crear una nueva consulta virtual personalizada(CVP)
@@ -91,7 +94,7 @@ export default {
   },
   methods: {
     inicio() {
-      this.$router.push("/")
+      this.$router.push("/inicio")
     },
     async crear(){
       if(this.CVP.p_name!='' && this.CVP.p_lname1!='' && this.CVP.p_lname2!=''){
@@ -118,7 +121,17 @@ export default {
     },
     cerrarPopup(){
        this.$router.push("/inicio")
-    }
+    },
+    
+    cuenta(){
+      this.$router.push("/perfil")
+    },
+    contacto(){
+      this.$router.push("/contacto")
+    },
+    crearCVP(){
+      this.$router.push("/creacionCVP")
+    },
   },
 }
 </script>

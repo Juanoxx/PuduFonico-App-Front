@@ -29,11 +29,13 @@
         src="/playground_assets/eeef37a5-d283-4faf-b068-beb63c86322c-ejv-200w.png"
         alt="imagen20220421185711919previewrev2161112"
         class="perfil-imagen20220421185711919previewrev21"
+        v-on:click="crearCVP"
       />
       <img
         src="/playground_assets/54330a62-4e6b-4080-a47c-6fab6910708b-3fdl-200h.png"
         alt="imagen20220421190215610previewrev1161113"
         class="perfil-imagen20220421190215610previewrev11"
+        v-on:click="contacto"
       />
       <img
         src="/playground_assets/2b52efd9-85e8-4f26-ace7-add35ac1da15-8c1p-300h.png"
@@ -112,7 +114,7 @@ export default {
 
   methods: {
     inicio() {
-      this.$router.push("/")
+      this.$router.push("/inicio")
     },
     editar() {
       this.$router.push("/editarCuenta")
@@ -120,7 +122,16 @@ export default {
     async getusuario(){
       let response = await axios.get('http://localhost:5000/api/users/8');
       this.usuario = response.data[0];
-    }
+    },
+    cuenta(){
+      this.$router.push("/perfil")
+    },
+    contacto(){
+      this.$router.push("/contacto")
+    },
+    crearCVP(){
+      this.$router.push("/creacionCVP")
+    },
   },
   created: async function(){
     this.getusuario()
