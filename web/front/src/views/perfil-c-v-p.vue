@@ -179,7 +179,7 @@ export default {
     async asignarFonema(fonema){
       let nivel=this.AN.indexOf(true)+1
       console.log({skill:fonema,level:nivel},'debug')
-      if(nivel==-1){
+      if(nivel==0){
         return false
       }
       for(var i=0;i<nivel-1;i++){
@@ -190,10 +190,44 @@ export default {
            
         }
       }
+      if(this.niveles[nivel-1].habilidades.indexOf(fonema)!=-1){
+        if(this.niveles.length!=1){
+          if(this.niveles.length==nivel){
+            console.log(this.niveles[nivel-1],'1')
+            let response1 = await axios.delete('http://localhost:5000/api/cvp/'+this.$route.params.id+'/removeSkill?skill='+fonema);
+            console.log(response1.data,fonema,this.$route.params.id)
+            this.niveles=[]
+            this.getNiveles()
+            console.log(this.niveles,'banana')
+            return 0
+          }
+          else{
+            if(this.niveles[nivel-1].habilidades.length!=1){
+              console.log(this.niveles[nivel-1],'2')
+              let response2 = await axios.delete('http://localhost:5000/api/cvp/'+this.$route.params.id+'/removeSkill?skill='+fonema);
+              console.log(response2.data,fonema)
+              this.niveles=[]
+              this.getNiveles()
+              //delete
+              return 0
+            }
+          }
+        }
+        else{
+          console.log(this.niveles[nivel-1],'3')
+          let response3 = await axios.delete('http://localhost:5000/api/cvp/'+this.$route.params.id+'/removeSkill?skill='+fonema);
+          console.log(response3.data)
+          this.niveles=[]
+          this.getNiveles()
+          //delete
+          return 0
+        }
+      }
       let response = await axios.post('http://localhost:5000/api/cvp/'+this.$route.params.id+'/addSkill',{skill:fonema,level:nivel});
       console.log(response.data)
       this.niveles=[]
       this.getNiveles()
+      console.log(this.niveles)
     },
     async getNiveles(){
 
