@@ -8,4 +8,4 @@ import {name as appName} from './app.json';
 import vistaVacia from './Appli/screens/vistaVacia';
 import voiceTest from './Appli/screens/voiceTest';
 
-AppRegistry.registerComponent(appName, () => voiceTest);
+AppRegistry.registerComponent(appName, () => StackNavigator);

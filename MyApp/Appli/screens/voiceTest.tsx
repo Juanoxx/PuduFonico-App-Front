@@ -72,8 +72,7 @@ const App = () => {
   const startRecognizing = async () => {
     //Starts listening for speech for a specific locale
     try {
-      await Voice.start('en-US');   
-      Voice.getSpeechRecognitionServices();
+      await Voice.start('es-CL');   
       setPitch('');
       setError('');
       setStarted('');

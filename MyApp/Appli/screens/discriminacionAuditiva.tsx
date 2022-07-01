@@ -8,15 +8,16 @@ import {useState} from 'react';
 
 interface Props extends StackScreenProps<any,any>{};
 
-const juegoCara = ({navigation}: Props) => {
+const discriminacionAuditiva = ({navigation}: Props) => {
     
+
     // Enable playback in silence mode
     Sound.setCategory('Playback');
 
     // Load the sound file 'whoosh.mp3' from the app bundle
     // See notes below about preloading sounds within initialization code below.
     
-    var whoosh = new Sound('tutor_imita.mp3', null, (error) => {
+    var whoosh = new Sound('selec_loro.mp3', null, (error) => {
     if (error) {
       console.log('failed to load the sound', error);
       return;
@@ -32,43 +33,56 @@ const juegoCara = ({navigation}: Props) => {
         console.log('playback failed due to audio decoding errors');
       }
     });
+    
   });
     return (
         <GradientBackground>
             
-            <TouchableOpacity onPress={ () => navigation.navigate('discriminacionAuditiva') }>
+            <TouchableOpacity onPress={ () => navigation.navigate('vistaVacia') }>
 
         <Image source={require('@recursos/images/flecha.png')}
           style={loginStyles.flecha} />
 
         </TouchableOpacity>
-
-            <View style={loginStyles.container}>
-
-
-                
-                <TouchableOpacity>
-
-                    <Image source={require('@recursos/images/juegoDos.png')}
-                    style={loginStyles.logo}/>
-
-                </TouchableOpacity>
-                <Text> Repetir Audio</Text>
-                <TouchableHighlight onPress={() => { whoosh.play()}}>
-
-                
-          <Image
-            style={loginStyles.replay}
-            source={require('@recursos/images/repetir.png')}
-          />
-        </TouchableHighlight>
-            </View>
             
+        <Text style={mainStyles.titleText}> ¿Cúal es el correcto?</Text>
+
+
+            <View style={iconStyles.container} >
+
+            <TouchableOpacity onPress={() => navigation.navigate('discriPositiva')}>
+            
+            <Image source={require('@recursos/images/loro.png')}
+            style={loginStyles.logo}/>
+
+            </TouchableOpacity>
+            
+            <TouchableOpacity onPress={() => navigation.navigate('discriNegativa')}>
+
+            <Image source={require('@recursos/images/lodo.png')}
+            style={loginStyles.logo}/>
+
+            </TouchableOpacity>
+        </View>
+                  
+        <View style={loginStyles.container}>
+
+
+        <Text> Repetir Audio</Text>
+            <TouchableHighlight onPress={() => { whoosh.play()}}>
+
+
+            <Image
+                    style={loginStyles.replay}
+                        source={require('@recursos/images/repetir.png')}
+                            />
+                </TouchableHighlight>
+            </View>
         </GradientBackground>
     )
     
 };
-export default juegoCara;
+export default discriminacionAuditiva
 
 
 const mainStyles = StyleSheet.create({
@@ -77,6 +91,7 @@ const mainStyles = StyleSheet.create({
         flex: 1,
         alignItems: 'center',
         backgroundColor: 'linear-gradient(180deg, #FF814B 0%, #FAC3AC 100%)',
+        
     },
 
     containerCenter: {
@@ -90,10 +105,20 @@ const mainStyles = StyleSheet.create({
         marginTop: 15,
         marginBottom: 15,
         fontFamily: "roboto-medium",
-        color: '#458C4C',
+        color: '#28230E',
         fontWeight: 'bold',
         textAlign: 'center',
     },
+
+  sigueIntentando: {
+    fontSize: 35,
+    marginTop: 15,
+    marginBottom: 15,
+    fontFamily: "roboto-medium",
+    color: '#A18A25',
+    fontWeight: 'bold',
+    textAlign: 'center',
+},
 
     descriptionText: {
         fontSize: 15,
@@ -137,28 +162,26 @@ const mainStyles = StyleSheet.create({
     container: {
         justifyContent: 'center',
         alignItems: 'center',
-        marginTop: 100,
+        marginTop: 80,
       },
 
     logo: {
-        height:350, 
-        width:350, 
+        height:150, 
+        width:150, 
         marginRight: 10, resizeMode: 'stretch',
         display:"flex",
         borderRadius:3,
     },
 
-    
-    replay: {
-        height:50, 
-        width:80,  resizeMode: 'stretch',
-        display:"flex",
-        borderRadius:3,
-        justifyContent: 'center',
-        alignItems: 'center',
-    },
+    logoPudu: {
+      height:80, 
+      width:80, 
+      marginRight: 10, resizeMode: 'stretch',
+      display:"flex",
+      borderRadius:3,
+      marginLeft:180,},
 
-    flecha: {
+      flecha: {
         height:50, 
         width:50, 
         marginRight: 10, resizeMode: 'stretch',
@@ -166,6 +189,71 @@ const mainStyles = StyleSheet.create({
         borderRadius:3,
         marginLeft:330,
   },
+
+    replay: {
+        height:50, 
+        width:80, resizeMode: 'stretch',
+        display:"flex",
+        borderRadius:3,
+    },
 })
 
+const styles = StyleSheet.create({
+    container: {
+      flex: 1,
+      flexDirection: 'column',
+      alignItems: 'center',
+      padding: 5,
+    },
+    headerContainer: {
+      flexDirection: 'row',
+      justifyContent: 'space-between',
+      paddingVertical: 10,
+    },
+    titleText: {
+      fontSize: 22,
+      textAlign: 'center',
+      fontWeight: 'bold',
+    },
+    buttonStyle: {
+      flex: 1,
+      justifyContent: 'center',
+      marginTop: 15,
+      padding: 10,
+      backgroundColor: '#046F4F',
+      marginRight: 2,
+      marginLeft: 2,
+    },
+    buttonTextStyle: {
+      color: '#fff',
+      textAlign: 'center',
+    },
+    horizontalView: {
+      flexDirection: 'row',
+      position: 'absolute',
+      bottom: 0,
+    },
+    textStyle: {
+      textAlign: 'center',
+      padding: 12,
+    },
+    imageButton: {
+      width: 50,
+      height: 50,
+      marginRight:10,
+    },
+    textWithSpaceStyle: {
+      flex: 1,
+      textAlign: 'center',
+      color: '#B0171F',
+    },
+  });
+
+  const iconStyles = StyleSheet.create({
+    container: {
+        justifyContent: 'center',
+        alignItems: 'center',
+        flexDirection: 'row',
+        marginTop:30      },
+    });
 

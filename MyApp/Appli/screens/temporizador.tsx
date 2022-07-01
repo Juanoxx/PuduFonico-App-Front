@@ -12,14 +12,18 @@ const temporizador = ({navigation}: Props) => {
    
     const [contador,setContador] = useState(3);
 
+    setTimeout(function(){
+        setContador(contador - 1);
+
+        if(contador == 1)
+        return navigation.navigate('juegoUnoPrev');
+    }, 1000);
 
     return (
         <GradientBackground>
             
             <View style={loginStyles.container}>
-                <TouchableOpacity onPress={() => {contador > 0 ? setContador( contador - 1) : navigation.navigate('juegoUno')}}>
                     <Text style = {mainStyles.titleText}>{contador}</Text>
-                    </TouchableOpacity>
                 
             </View>
 
